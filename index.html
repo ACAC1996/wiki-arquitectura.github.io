@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki Arquitectura de Software</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="head">
+        <h1>Glosario - Patrones de Diseño</h1>
+    </header>
+    <section class="contenedor">
+        <article class="articulo1">
+            <h2>Factory Method (Método Fábrica)</h2>
+            <p class="descripcion">Este método consiste en tener una interfaz, que es una superclase, que abarque varias clases al tiempo, es decir tener una clase base, que tenga atributos y métodos, que otras clases tengan en común, para así permitir que se pueda reutilizar código.</p>
+            <h3>Ejemplo</h3>
+            <p class="ejemplo">Se necesita implementar un sistema en un consultorio médico que permita crear los diferentes profesionales (médicos, enfermeras, odontólogos, fisiterapeutas, etc.) con sus respectivos datos personales como nombre, apellido, identificacion, fecha de nacimiento, especialidad, cargo; además de los diferentes métodos de acuerdo a las funciones de cada uno. Con la clase Persona, es posible sintetizar los datos y funciones que son comunes para todos, y crear subclases para cada uno de los cargos, únicamente detallando los atributos y métodos en los que se diferencia cada uno</p>
+            <img src="./img/factoryMethod.png" alt="FactoryMethod">
+        </article>
+        <article class="articulo2">
+            <h2>Builder (Constructor)</h2>
+            <p class="descripcion">Este patrón consiste en la creación de objetos complejos, haciéndolo paso a paso, por medio de objetos más sencillos, ya que en ocasiones, a pesar de tratarse del mismo objeto, puede tener ciertas características específicas; por lo que puede que un objeto tenga más o menos características que otro diferente, por lo que en lugar de utilizar un constructor que pueda tener parámetros nulos o vacíos, o tener que implementar varios constructores con características específicas, es mejor utilizar y seleccionar ciertos constructores según la necesidad. </p>
+            <h3>Ejemplo</h3>
+            <p class="ejemplo">Existen diferentes tipos de carros, unos con cuatro puertas, otros con dos; unos eléctricos, otros que funcionan con gasolina; unos con cajuela, otros sin ella, etc.,y también sabemos que todos los carros tienen un color, una marca, un modelo; por lo tanto, para crear estos objetos en un software, podríamos crear una interfaz que permita crear un carro, que tenga todos los atributos que tienen los carros en general (color, modelo, marca), pero con constructores especificos dependiendo el número de puertas, y de si tiene cajuela o no.</p>
+            <img src="./img/builder.png" alt="Builder">
+        </article>
+        <article class="articulo1">
+            <h2>Prototype (Prototipo)</h2>
+            <p class="descripcion">Consiste en la creación de una interfaz que permita copiar o clonar objetos sin importar la clase a la que pertenezca, por medio de un método específico "clonar", que lo que realiza es crear un objeto de la misma clase, tomando sus atributos, incluso los privados, ya que la mayoría de lenguajes de programación, permiten acceder a atributos privados, mientras sea de la misma clase.</p>
+            <h3>Ejemplo</h3>
+            <p class="ejemplo">Generalmente las empresas manejan inventarios con precios diferentes, de acuerdo a la zona de venta y al cliente al que se le vende, por lo tanto, para evitar tener que crear varios listados de precios y productos, es posible, crear un listado base que tenga todas las caracteristicas y atributos en común, y que de allí se generen nuevos listados clonando el base, y sólo generando el cambio de los precios según la zona o el cliente.</p>
+            <img src="./img/prototype.png" alt="Prototype">
+        </article>
+        <article class="articulo2">
+            <h2>Iterator (Iterador)</h2>
+            <p class="descripcion">A partir de una estructura de datos, es posible crear objetos llamados iteradores, que consisten en un comportamiento de recorrido específico, permitiendo que el recorrido por la colección sea más eficiente, ya que varios iteradores van a poder recorrer la estructura al tiempo.</p>
+            <h3>Ejemplo</h3>
+            <p class="ejemplo">Se necesita crear un sistema de turnos para un banco, por lo que gracias a este patrón, es posible generar dos iteradores, el primero que permite saber si hay personas esperando por turno, y el segundo que en caso de que si haya personas con turno asignado, pueda ser llamado para ser atendido.</p>
+            <img src="./img/iterador.png" alt="Prototype">
+        </article>
+        <article class="articulo1">
+            <h2>Stretegy (Estrategia)</h2>
+            <p class="descripcion">Consiste en una clase que cumple una función específica, pero la cual puede hacerlo de diferentes maneras, por lo que estas diferentes maneras son separadas en clases diferentes llamadas estrategias, pero se mantiene la clase original, llamada contexto, que tendrá un atributo que haga referencia a una estrategia específica. La persona que usa el software debe seleccionar la "estrategia" a utilizar, para que la clase contexto, sepa cual es la clase a ejecutar.</p>
+            <h3>Ejemplo</h3>
+            <p class="ejemplo">Google Maps, es un ejemplo de este patrón de diseño, por ejemplo, cuando una persona quiere saber como llegar de un lugar a otro, y la aplicación tiene la opción de seleccionar si se va a utilizar moto, carro, transporte público o se va a hacer a pie, por lo que los medios de transporte serían las clases "estrategias".</p>
+            <img src="./img/strategy.png" alt="Prototype">
+        </article>
+    </section>
+    <section class="bibliografia">
+        <h2>Bibliografía</h2>
+        <ul>
+            <li>Blancarte, O. (2021). Oscar Blancarte Software Architect. Obtenido de Prototype: https://reactiveprogramming.io/blog/es/patrones-de-diseno/prototype</li>
+            <li>Caules, C. Á. (27 de junio de 2022). Arquitectura Java. Obtenido de El patrón Iterador y su flexibilidad: https://www.arquitecturajava.com/el-patron-iterador-y-su-flexibilidad/</li>
+            <li>Refactoring Guru. (s.f.). Obtenido de https://refactoring.guru/es/design-patterns/</li>
+            <li>Thilakarathne, P. (29 de julio de 2020). Medium. Obtenido de Factory Method Design Pattern with Real-world example: https://prasadct.medium.com/factory-method-design-patternfactory-method-design-pattern-with-real-world-example-4ee909a24ab6</li>
+        </ul>
+    </section>
+
+</body>
+</html>
